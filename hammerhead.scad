@@ -1,11 +1,11 @@
-HW=80;        // Width of head
-HH=80;        // Height
-HD=180;       // Depth
-HR=5;         // Radius
-ODMIN=25;     // Opening diameter, minor
-ODMAJ=60;     // Opening diameter, major
-EPS=0.1;      // Epsilon (to avoid thin features)
-K_SHAPE=1.5;  // Hole shape constant. This is "wrong" but close enough
+HW=90;     // Width of head
+HH=90;     // Height
+HD=180;    // Depth
+HR=5;      // Radius
+ODMIN=40;  // Opening diameter, minor
+ODMAJ=60;  // Opening diameter, major
+EPS=0.1;   // Epsilon (to avoid thin features)
+K_SHAPE=1.1;  // Hole shape constant. This is "wrong" but close enough
 
 difference() {
     minkowski() {
@@ -19,8 +19,11 @@ difference() {
         }
         sphere(r = HR,$fn=40);
     }
+    //*
     hull() {
         translate([0, (ODMAJ/2-ODMIN/2)/K_SHAPE, 0]) scale([1, K_SHAPE, 1]) cylinder(h=HH+HR+EPS, d=ODMIN, center=true);
         translate([0, (ODMIN/2-ODMAJ/2)/K_SHAPE, 0]) scale([1, K_SHAPE, 1]) cylinder(h=HH+HR+EPS, d=ODMIN, center=true);
     }
+    //*/
+    //scale([1, ODMAJ/ODMIN, 1]) cylinder(h=HH+HR+EPS, d=ODMIN, center=true);
 }
