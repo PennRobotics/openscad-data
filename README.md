@@ -1,7 +1,9 @@
 OpenSCAD data
 =============
-
 Repository for sharing and storing 3d object information (CAD data)
+
+https://gitlab.com/PennRobotics/openscad-data/
+
 
 <div id="badges">
   <a href="https://www.linkedin.com/in/pennrobotics/"><img src="https://img.shields.io/badge/LinkedIn-steelblue?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/></a>
